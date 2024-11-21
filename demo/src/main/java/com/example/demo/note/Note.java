@@ -27,32 +27,22 @@ public class Note {
         return date;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    private LocalDate date;
+    private LocalDate date = LocalDate.now();
     private String text;
     
     public Note() {
     }
 
-    public Note(long id, LocalDate date, String text) {
+    public Note(long id, String text) {
         this.id = id;
-        this.date = date;
         this.text = text;
     }
 
-    public Note(LocalDate date, String text) {
-        this.date = date;
+    public Note(String text) {
         this.text = text;
     }
 

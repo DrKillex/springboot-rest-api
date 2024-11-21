@@ -18,4 +18,8 @@ public class NoteService {
 	public List<Note> getNotes() {
 		return noteRepository.findAll();			
 	}
+
+    public void addNewNote(Note note) {
+		noteRepository.save(note);
+    }
 }
