@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "note_table")
+@Table
 public class Note {
 
     @Id
@@ -42,6 +42,9 @@ public class Note {
     private LocalDate date;
     private String text;
     
+    public Note() {
+    }
+
     public Note(long id, LocalDate date, String text) {
         this.id = id;
         this.date = date;
