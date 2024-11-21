@@ -1,6 +1,8 @@
 package com.example.demo.note;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +25,7 @@ public class Note {
         this.id = id;
     }
 
-    public LocalDate getDate() {
+    public ZonedDateTime getDate() {
         return date;
     }
 
@@ -31,7 +33,7 @@ public class Note {
         return text;
     }
 
-    private LocalDate date = LocalDate.now();
+    private ZonedDateTime date = ZonedDateTime.now(ZoneId.of("Europe/Rome"));
     private String text;
     
     public Note() {
