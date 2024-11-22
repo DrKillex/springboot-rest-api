@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class NoteService {
 
@@ -32,6 +34,7 @@ public class NoteService {
 		noteRepository.deleteById(noteId);
     }
 
+	@Transactional
     public void updateNote(Long noteId, String note) {
 		boolean exists = noteRepository.existsById(noteId);
 		if (!exists) {
@@ -41,7 +44,6 @@ public class NoteService {
 		if (optionalNote.isPresent()) {
 			Note saved = optionalNote.get();
 			saved.setText(note);
-			noteRepository.save(saved);
 		}
 	}	
 }

@@ -40,7 +40,6 @@ public class NoteController {
         noteService.deleteNote(noteId);
     }
     
-    @Transactional
     @PutMapping(path = "/{noteId}")
     public void updateNote(@PathVariable("noteId") Long noteId, @RequestBody String note) {
         noteService.updateNote(noteId, note);
